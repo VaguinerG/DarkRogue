@@ -1,8 +1,9 @@
-const
+var
   sceneDuration = 10.0
-  fadeDuration = 2.0
+  fadeDuration = sceneDuration / 5.0
 
 proc drawLogoScene() =
+    if sceneDuration == 10.0: sceneDuration += getTime()
     let currentTime = getTime()
 
     if currentTime >= sceneDuration or isMouseButtonPressed(LEFT):

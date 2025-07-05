@@ -73,16 +73,12 @@ jobs:
           nimble install naylib nimja https://github.com/planetis-m/naygui -y
           nimble setupAndroid
           nimble buildAndroid
-          rm -rf *.apk
-          keytool -genkeypair -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -keystore debug.keystore -storepass android -keypass android -dname "CN=Android Debug,O=Android,C=US"
-          jarsigner -verbose -keystore debug.keystore -storepass android -keypass android android/app/build/outputs/apk/release/app-release-unsigned.apk androiddebugkey
-          cp android/app/build/outputs/apk/release/app-release-unsigned.apk ./game.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: Dark_Rogue-android
-          path: game.apk
+          path: ./*.apk
           compression-level: 9
 
   build-web:
