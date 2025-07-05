@@ -4,7 +4,7 @@ include settings, setup
 include internal/[assets]
 include scenes/[logo, menu]
 
-initWindow(0, 0, "Dark Rogue")
+initWindow(800, 600, "Dark Rogue")
 initAssets()
 
 block:
