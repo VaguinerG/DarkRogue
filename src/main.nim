@@ -12,6 +12,7 @@ block:
         updateVars()
         drawing:
             clearBackground(MENU_BG_COLOR)
+            drawCircle(getMouseX(), getMouseY(), 50, RED)
             case GAME_SCENE:
                 of LOGO:
                     drawLogoScene()
