@@ -12,6 +12,8 @@ block:
         updateVars()
         drawing:
             clearBackground(MENU_BG_COLOR)
+            drawText($getScreenWidth() & "x" & $getScreenHeight(), 0, 0, 10, RED)
+            drawText($getRenderWidth() & "x" & $getRenderHeight(), 0, 20, 10, RED)
             drawCircle(getMouseX(), getMouseY(), 50, RED)
             case GAME_SCENE:
                 of LOGO:
